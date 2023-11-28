@@ -51,3 +51,12 @@ CREATE TABLE medical_histories
     PRIMARY KEY (id)
 );
 
+CREATE TABLE treatments
+(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    type VARCHAR(255),
+    name VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+CREATE INDEX index_treatment_id2 ON medical_history_treatment(treatment_id);
